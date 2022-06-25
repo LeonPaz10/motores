@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- CSS only -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <% if(productos.length) { %>
+        <table class="table container" style=" margin-top: 20px;" >
+           <h4 style="display:flex ; justify-content: center; margin-top: 20px;">Historial de productos cargados </h4>
+           <thead>
+              <tr>
+                 <th>Nombre</th>
+                 <th>Precio</th>
+                 <th>Imagen</th>
+              </tr>
+           </thead>
+           <tbody>
+              <% productos.map(producto => { %>
+              <tr>
+                 <td><%= producto.producto %></td>
+                 <td><%= producto.precio %></td>
+                  <td> <img src="<%= producto.thumbnail %> "width="100px" height="100px"></td>
+              </tr>
+              <% }) %>
+           </tbody>
+        </table>
+        <% } else { %>
+           <h4 >Historial de productos cargados </h4>
+           <h6 class="container" style="display:flex ; justify-content: center; margin-top: 20px; color: red;">No hay productos en el historial</h6>
+        <% } %>
+         
+    <a href="/" class=" btn btn-primary" style="display: flex; justify-content: center; margin-left: 600px; margin-right: 600px; margin-bottom: 5px;"  >Cargar productos</a>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
